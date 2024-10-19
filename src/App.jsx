@@ -240,15 +240,52 @@
 //     </div>
 //   );
 // }
-import React from 'react'
-import Auth from './Auth'
+
+// import React from 'react';
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import Auth from './Auth';
+// import AdminDashboard from './sections/AdminDashboard';
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <div>
+//         <Routes>
+//           <Route path="/" element={<Auth />} /> {/* Auth route */}
+//           <Route path="/dashboard" element={<AdminDashboard />} /> {/* AdminDashboard route */}
+//           {/* Add more routes here as needed */}
+//         </Routes>
+//       </div>
+//     </Router>
+//   );
+// }
+
+// export default App;
+// /App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Auth from './Auth';
+import AdminDashboard from './sections/AdminDashboard';
+import CreateWebsite from './sections/CreateWebsite';
+import WebsiteDashboard from './sections/WebsiteDashboard';
+import Navbar from './sections/Navbar';
 
 const App = () => {
   return (
-    <div>
-      <Auth></Auth>
-    </div>
-  )
+    <Router>
+      <div>
+        <Navbar></Navbar>
+        <Routes>
+          <Route path="/auth" element={<Auth />} /> {/* Auth route */}
+          {/* <Route path="/dashboard" element={<AdminDashboard />}> */}
+            <Route path="/createsite" element={<CreateWebsite />} />
+            <Route path="/websitedashboard" element={<WebsiteDashboard />} />
+          {/* </Route> */}
+          {/* Add more routes here as needed */}
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

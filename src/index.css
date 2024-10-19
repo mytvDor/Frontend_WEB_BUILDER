@@ -62,5 +62,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    overflow: hidden; /* This will remove the scrollbar but also prevent scrolling */
   }
+
 }
