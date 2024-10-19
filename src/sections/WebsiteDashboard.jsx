@@ -286,25 +286,25 @@ const WebsiteDashboard = () => {
   };
 
   return (
-    <div className="bg-zinc-950 min-h-screen p-8"> {/* Dark background */}
+    <div className="bg-zinc-950 min-h-screen p-8"> 
     <div className="flex justify-start items-center flex-wrap">
   {websites.map((site) => (
     <Card key={site.siteId} className="bg-zinc-900 text-white w-72 m-2"> {/* Added 2cm margin around each card */}
       <CardHeader>
-        <CardTitle className="text-lg font-bold">{site.username}</CardTitle>
-        <CardDescription>Template: {site.templateName} </CardDescription>
-        <CardDescription>Content: {site.siteData.content} </CardDescription>
+        <CardTitle className="text-lg font-bold text-lime-400">{site.username}</CardTitle>
+        <CardDescription className="text-zinc-400" >Template: {site.templateName} </CardDescription>
+        <CardDescription  className="text-zinc-300">Content: {site.siteData.content} </CardDescription>
 
       </CardHeader>
-      <CardContent>
+      <CardContent className="text-lime-400">
       Link <a href={site.liveUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline mb-2 block">
           {site.liveUrl.slice(0, 17)}
         </a>
         <br></br>
-        ID <br></br> {site.siteId}
+        ID <br></br> <div className="text-white">{site.siteId}</div>
       </CardContent>
       <CardFooter className="flex justify-between mt-4">
-        <Button variant="default" size="sm" onClick={() => startEditing(site)}>
+        <Button variant="default"className="bg-lime-400 text-black" size="sm" onClick={() => startEditing(site)}>
           Update
         </Button>
         <Button variant="destructive" size="sm" disabled={Del_loading} onClick={() => handleDelete(site.siteId)}>

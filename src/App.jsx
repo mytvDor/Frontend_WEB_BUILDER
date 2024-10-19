@@ -269,13 +269,14 @@ import AdminDashboard from './sections/AdminDashboard';
 import CreateWebsite from './sections/CreateWebsite';
 import WebsiteDashboard from './sections/WebsiteDashboard';
 import Navbar from './sections/Navbar';
-
+import Home from './Home'
 const App = () => {
   return (
     <Router>
       <div>
         <Navbar></Navbar>
         <Routes>
+          <Route path='/' element={<Home></Home>}></Route>
           <Route path="/auth" element={<Auth />} /> {/* Auth route */}
           {/* <Route path="/dashboard" element={<AdminDashboard />}> */}
             <Route path="/createsite" element={<CreateWebsite />} />
